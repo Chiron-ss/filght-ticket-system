@@ -1,0 +1,124 @@
+/* 航班票务管理系统 - 现代简约风格 QSS */
+
+/* 全局设置 */
+QWidget {
+    font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+    font-size: 14px;
+    color: #333333;
+    background-color: #F5F7FA;
+}
+
+/* 主窗口 */
+QMainWindow {
+    background-color: #F5F7FA;
+}
+
+/* 按钮样式 */
+QPushButton {
+    background-color: #0078D7;
+    color: white;
+    border-radius: 4px;
+    padding: 8px 16px;
+    border: none;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #005A9E;
+}
+
+QPushButton:pressed {
+    background-color: #004578;
+}
+
+QPushButton#btn_login, QPushButton#btn_register {
+    min-width: 100px;
+    height: 35px;
+}
+
+/* 辅助按钮 */
+QPushButton#btn_query, QPushButton#btn_refresh_flights {
+    background-color: #28a745;
+}
+
+QPushButton#btn_query:hover {
+    background-color: #218838;
+}
+
+/* 输入框样式 */
+QLineEdit, QDateTimeEdit, QComboBox, QSpinBox {
+    border: 1px solid #DCDFE6;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: white;
+}
+
+QLineEdit:focus, QDateTimeEdit:focus {
+    border-color: #409EFF;
+}
+
+/* 表格样式 */
+QTableWidget {
+    background-color: white;
+    border: 1px solid #EBEEF5;
+    gridline-color: #EBEEF5;
+    selection-background-color: #ECF5FF;
+    selection-color: #409EFF;
+    border-radius: 4px;
+}
+
+QHeaderView::section {
+    background-color: #F5F7FA;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #EBEEF5;
+    font-weight: bold;
+    color: #909399;
+}
+
+/* 标签页样式 */
+QTabWidget::pane {
+    border: 1px solid #DCDFE6;
+    background-color: white;
+    border-radius: 4px;
+    top: -1px;
+}
+
+QTabBar::tab {
+    background-color: #F5F7FA;
+    border: 1px solid #DCDFE6;
+    border-bottom-color: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 10px 20px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background-color: white;
+    border-bottom-color: white;
+    color: #409EFF;
+    font-weight: bold;
+}
+
+/* 状态栏 */
+QStatusBar {
+    background-color: #FFFFFF;
+    border-top: 1px solid #EBEEF5;
+    color: #606266;
+}
+
+/* 组合框 */
+QGroupBox {
+    font-weight: bold;
+    border: 1px solid #EBEEF5;
+    border-radius: 6px;
+    margin-top: 12px;
+    padding-top: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 3px 0 3px;
+}

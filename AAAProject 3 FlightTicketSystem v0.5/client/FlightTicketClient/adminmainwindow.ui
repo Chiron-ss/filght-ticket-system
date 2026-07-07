@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminMainWindow</class>
+ <widget class="QMainWindow" name="AdminMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>航班票务管理系统 - 管理端</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1180</width>
+      <height>750</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tabUser">
+     <attribute name="title">
+      <string>用户管理</string>
+     </attribute>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QGroupBox" name="groupBoxUserQuery">
+        <property name="title">
+         <string>用户查询</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>用户名:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditUserQuery"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnQueryUser">
+           <property name="text">
+            <string>查询</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_refresh_users">
+           <property name="text">
+            <string>刷新全部</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnClearUserQuery">
+           <property name="text">
+            <string>清空条件</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnBlockUser">
+           <property name="text">
+            <string>禁用/启用</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="tableUser">
+        <property name="columnCount">
+         <number>4</number>
+        </property>
+        <property name="horizontalHeaderLabels" stdset="0">
+         <stringlist>
+          <string>用户ID</string>
+          <string>用户名</string>
+          <string>密码</string>
+          <string>手机号</string>
+         </stringlist>
+        </property>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tabFlight">
+     <attribute name="title">
+      <string>航班管理</string>
+     </attribute>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QGroupBox" name="groupBoxFlightAdd">
+        <property name="title">
+         <string>添加航班</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="4" column="4">
+          <widget class="QSpinBox" name="spinBoxEcoAvail">
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>999</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>公务舱价格:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>经济舱价格:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="4">
+          <widget class="QCheckBox" name="checkBoxMeal">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="cursor">
+            <cursorShape>WaitCursor</cursorShape>
+           </property>
+           <property name="mouseTracking">
+            <bool>false</bool>
+           </property>
+           <property name="tabletTracking">
+            <bool>true</bool>
+           </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QCheckBox::indicator {
+    width: 18px;  /* 勾选框宽度 */
+    height: 18px; /* 勾选框高度 */
+}
+QCheckBox::indicator:checked {
+    background-color: #2196F3; /* 勾选后的填充色（示例：深蓝色） */
+    border: 1px solid #1976D2; /* 勾选后的边框色 */
+}
+QCheckBox::indicator:unchecked {
+    background-color: #FFFFFF; /* 未勾选的填充色（白色） */
+    border: 1px solid #BDBDBD; /* 未勾选的边框色（灰色） */
+}</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+           <property name="tristate">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>经济舱可用:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QSpinBox" name="spinBoxBusTotal">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>999</number>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QLineEdit" name="lineEditAircraft"/>
+         </item>
+         <item row="4" column="1">
+          <widget class="QSpinBox" name="spinBoxEcoTotal">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>999</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>目的地:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>出发地:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QDoubleSpinBox" name="doubleSpinBoxEcoPrice">
+           <property name="minimum">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>9999.989999999999782</double>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>公务舱总座位:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="4">
+          <widget class="QSpinBox" name="spinBoxBusAvail">
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>999</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="4">
+          <widget class="QDoubleSpinBox" name="doubleSpinBoxBusPrice">
+           <property name="minimum">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>9999.989999999999782</double>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>公务舱可用:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="2">
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>含餐食:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>机型:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="4">
+          <widget class="QLineEdit" name="lineEditAirline"/>
+         </item>
+         <item row="7" column="0" colspan="5">
+          <widget class="QPushButton" name="btn_add_flight">
+           <property name="text">
+            <string>添加航班</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>航班号:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="lineEditFlightNum"/>
+         </item>
+         <item row="2" column="1">
+          <widget class="QDateTimeEdit" name="dateTimeEditArrive">
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>出发时间:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>航空公司:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>到达时间:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QDateTimeEdit" name="dateTimeEditDepart">
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEditDest"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>经济舱总座位:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QLineEdit" name="lineEditOrigin"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBoxFlightQuery">
+        <property name="title">
+         <string>航班查询</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>出发地:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditFlightOrigin"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_17">
+           <property name="text">
+            <string>目的地:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditFlightDest">
+           <property name="maximumSize">
+            <size>
+             <width>200000</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>日期:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="dateEditFlight">
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_query_flights_admin">
+           <property name="text">
+            <string>查询</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_edit_flight">
+           <property name="text">
+            <string>编辑</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_delete_flight">
+           <property name="text">
+            <string>删除</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnClearFlightQuery">
+           <property name="text">
+            <string>清空条件</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_refresh_flights">
+           <property name="text">
+            <string>刷新全部</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="tableFlight">
+        <property name="columnCount">
+         <number>13</number>
+        </property>
+        <property name="horizontalHeaderLabels" stdset="0">
+         <stringlist>
+          <string>航班ID</string>
+          <string>航班号</string>
+          <string>出发地</string>
+          <string>目的地</string>
+          <string>起飞时间</string>
+          <string>到达时间</string>
+          <string>航空公司</string>
+          <string>经济舱价格</string>
+          <string>公务舱价格</string>
+          <string>经济舱余票</string>
+          <string>公务舱余票</string>
+          <string>机型</string>
+          <string>餐食</string>
+         </stringlist>
+        </property>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tabOrder">
+     <attribute name="title">
+      <string>订单管理</string>
+     </attribute>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QGroupBox" name="groupBoxOrderQuery">
+        <property name="title">
+         <string>订单查询</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label_19">
+           <property name="text">
+            <string>用户ID:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinBoxOrderUserId">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnQueryOrder">
+           <property name="text">
+            <string>查询用户订单</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnClearOrderQuery">
+           <property name="text">
+            <string>清空条件</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_refresh_orders_admin">
+           <property name="text">
+            <string>刷新全部订单</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBoxOrderUpdate">
+        <property name="title">
+         <string>更新订单状态</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_20">
+           <property name="text">
+            <string>订单ID:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinBoxOrderId">
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>9999</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_21">
+           <property name="text">
+            <string>新状态:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboOrderStatus">
+           <property name="insertPolicy">
+            <enum>QComboBox::InsertPolicy::InsertAtBottom</enum>
+           </property>
+           <item>
+            <property name="text">
+             <string>cancelled</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>completed</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>booked</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>refunded</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnUpdateOrder">
+           <property name="text">
+            <string>更新状态</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="tableOrder">
+        <property name="columnCount">
+         <number>6</number>
+        </property>
+        <property name="horizontalHeaderLabels" stdset="0">
+         <stringlist>
+          <string>订单ID</string>
+          <string>用户ID</string>
+          <string>航班号</string>
+          <string>舱位</string>
+          <string>订单时间</string>
+          <string>状态</string>
+         </stringlist>
+        </property>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tabStats">
+     <attribute name="title">
+      <string>统计与设置</string>
+     </attribute>
+     <layout class="QVBoxLayout" name="verticalLayout_Stats">
+      <item>
+       <widget class="QGroupBox" name="groupBoxStats">
+        <property name="title">
+         <string>系统统计</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayoutStats">
+         <item row="0" column="0">
+          <widget class="QLabel" name="l1">
+           <property name="text">
+            <string>总航班数:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="lblTotalFlights">
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="l2">
+           <property name="text">
+            <string>活跃航班:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="lblActiveFlights">
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="l3">
+           <property name="text">
+            <string>总订单数:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="lblTotalOrders">
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="l4">
+           <property name="text">
+            <string>完成订单:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLabel" name="lblCompletedOrders">
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="l5">
+           <property name="text">
+            <string>总用户数:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="lblTotalUsers">
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLabel" name="l6">
+           <property name="text">
+            <string>活跃用户:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLabel" name="lblActiveUsers">
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="l7">
+           <property name="text">
+            <string>总收入:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="lblTotalRevenue">
+           <property name="text">
+            <string>0.00</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLabel" name="l8">
+           <property name="text">
+            <string>今日收入:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3">
+          <widget class="QLabel" name="lblTodayRevenue">
+           <property name="text">
+            <string>0.00</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBoxSettings">
+        <property name="title">
+         <string>系统设置</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_Settings">
+         <item>
+          <widget class="QPushButton" name="btnResetSystem">
+           <property name="text">
+            <string>重置系统数据</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_logout_admin">
+        <property name="text">
+         <string>退出当前管理员账号</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="lblAdminStatus">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>770</y>
+      <width>800</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>当前登录：未登录</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
